@@ -18,4 +18,10 @@ public class ClientRepositoryTest {
         Assertions.assertFalse(repository.existsById(id));
     }
 
+    // Cenário de Teste 2
+    @Test
+    public void testDeleteExceptionWithNotExistingId() {
+        long id = 100000;
+        Assertions.assertThrows(Exception.class, () -> repository.deleteById(id));
+    }
 }
